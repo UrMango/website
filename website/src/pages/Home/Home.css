@@ -1,0 +1,101 @@
+.Home {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: white;
+}
+
+.Home .content {
+	margin-top: 40px;
+}
+
+.Home .profile-image {
+	width: 8.75rem;
+	border-radius: 100%;
+	border: white solid 3px;
+}
+
+.Home .name {
+	margin-top: -10px;
+	font-weight: bold;
+	font-size: 3.75rem;
+}
+
+.Home .secondary {
+	font-weight: 400;
+	font-size: 1.38rem;
+}
+
+.Home .description {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-weight: 200;
+	font-size: 1rem;
+	width: 340px;
+}
+
+.Home .portfolio {
+	color: white;
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 1rem;
+	background-color: #F93131;
+	padding: 20px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	border-radius: 150px;
+	z-index: 1;
+}
+
+.Home .circle {
+	position: absolute;
+	overflow: hidden;
+	width: 40vw;
+	height: 100vh;
+	left: calc(50% - 50vw/2 - 30vw);
+	bottom: -40vh;
+
+	background: linear-gradient(225deg, #FF292900 30%, #FF2929 60%);
+	opacity: 0.8;
+	filter: blur(8vw);
+	transform: rotate(7deg);
+	z-index: 0;
+}
+
+.Home .circle1 {
+	position: absolute;
+	overflow: hidden;
+	width: 40vw;
+	height: 100vh;	
+	left: calc(50% - 50vw/2 + 30vw);
+	top: -40vh;
+
+	background: linear-gradient(180deg, #FF832900 30%, #FF8329 60%);
+	opacity: 0.8;
+	filter: blur(7vw);
+	transform: rotate(-115deg);
+	z-index: 0;
+}
+
+.Home .yin-yang {
+	position: absolute;
+	z-index: 2;
+	width: 140px;
+	height: 140px;
+	left: 25vw;
+	top: 75vh;
+
+	transform: rotate(119.64deg);
+}
+
+.Home .mango {
+	position: absolute;
+	z-index: 0;
+	width: 185px;
+	height: 156px;
+	left: 73vw;
+	top: 13.5vh;
+
+	transform: rotate(135.96deg);
+}
