@@ -1,0 +1,65 @@
+.ExperienceBox {
+	color: white;
+	font-weight: 800;
+	font-size: 18px;
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	
+	background-color: rgba(46, 0, 119);;
+	border-radius: 10px;
+
+	width: 699px;
+	height: 65px;
+	list-style: none;
+	z-index: 3;
+	
+	cursor: pointer;
+
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+details[open] summary {
+	background-color: rgb(97, 0, 255);
+}
+
+
+.ExperienceBox .left {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	width: 350px;
+	align-items: center;
+}
+
+.ExperienceBox .left .icon{
+	left: 0;
+	width: 45px;
+	margin-right: 10px;
+	height: fit-content;
+	border-radius: 100%;
+}
+
+.ExperienceBox .left .position {
+	left: 0;
+	font-weight: 700;
+	font-size: 18px;
+	text-align: left;
+}
+
+.ExperienceBox .date {
+	right: 0;
+	font-weight: 700;
+	font-size: 18px;
+	text-align: right;
+}
+
+.ExperienceBox .toggle {
+	width: 20px;
+	filter: brightness(0) invert(1) drop-shadow(0.5px -0.5px 0px white);
+}

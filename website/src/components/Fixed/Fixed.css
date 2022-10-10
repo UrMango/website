@@ -1,0 +1,103 @@
+.Fixed {
+	position: fixed;
+    display: flex;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    z-index: 9999;
+}
+
+.Fixed .title {
+    top: 31px;
+    z-index: 9999;
+}
+
+.Fixed .title .name {
+    left: 0;
+    margin-top: 30px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 61px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+    z-index: 20;
+    
+}
+
+.Fixed .title .secondary {
+    z-index: 20;
+    left: 0;
+    margin-top: -10px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.3px;
+    line-height: 20px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.Fixed .title .bg {
+    z-index: -1;
+    position: absolute;
+    top: 30px;
+    height: 260px;
+    width: 260px;
+    height: 100px;
+    background: #000000;
+    filter: blur(32px);
+    border-radius: 79px;
+}
+
+.Fixed .sidebar {
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: black;
+    width: 100px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.Fixed .sidebar .menu {
+    height: 71.74px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    z-index: 9999;
+}
+
+.Fixed .sidebar .menu li {
+    left: 0;
+	list-style: none;
+    z-index: 9999;
+}
+
+.Fixed .sidebar .menu li a {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    z-index: 9999;
+}

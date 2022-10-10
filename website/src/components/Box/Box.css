@@ -1,0 +1,39 @@
+.Box {
+	border: 3px solid #ffffff;;
+	color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.Box .upper {
+	display: flex;
+	flex-direction: row;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 0;
+	align-items: center;
+	height: 120px;
+}
+
+.Box .upper .icon {
+	width: 35px;
+	height: 31px;
+	margin-right: 20px;
+}
+
+.Box .upper .title {
+	font-weight: 600;
+	font-size: 21px;
+	text-align: left;
+	line-height: 25.4px;
+}
+
+.Box .description {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 16.94px;
+	text-align: left;
+	margin-top: -20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}

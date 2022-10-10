@@ -1,0 +1,82 @@
+.ExperienceDetails {
+	color: white;
+	font-weight: 800;
+	font-size: 18px;
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: none;
+	
+	background-color: #6200ff1e;
+	border-radius: 0px 0px 10px 10px;
+
+	width: 699px;
+	list-style: none;
+	z-index: 2;
+	margin-top: -10px;
+	padding-top: 30px;
+	padding-left: 22px;
+	padding-bottom: 20px;
+	padding-right: 22px;
+
+	flex-flow: row-reverse;
+}
+
+.ExperienceDetails .logo img {
+	width: 8vw;
+	height: fit-content;
+}
+
+.ExperienceDetails .details {
+	width: 80%;
+	font-size: 18px;
+	font-weight: 400;
+	text-align: left;
+}
+
+.ExperienceDetails .details {
+	width: 80%;
+	font-size: 18px;
+	font-weight: 400;
+	text-align: left;
+}
+
+.ExperienceDetails .details .links {
+	margin-bottom: 5px;
+}
+
+.ExperienceDetails .details .links img {
+	margin-right: 10px;
+}
+
+.ExperienceDetails .details .tools {
+	margin-top: 25px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.ExperienceDetails .details .tools h3 {
+	margin-right: 10px;
+	font-weight: 400;
+}
+
+.ExperienceDetails .details .tools .tools-list{
+	height: 36px;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: fit-content;
+	padding: 5px 5px 5px 5px;
+	border-radius: 100px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.ExperienceDetails .details .tools .tools-list img{
+	height: 25px;
+	margin-right: 5px;
+	margin-left: 5px;
+	filter: brightness(0) invert(1);
+}
