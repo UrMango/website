@@ -14,10 +14,10 @@ html {
 }
 
 body {
-  text-align: center;
-  font-family: 'Poppins', 'Rubik', 'Arial';
-  position: relative;
-  overflow: hidden;
+  	text-align: center;
+  	font-family: 'Poppins', 'Rubik', 'Arial';
+  	position: relative;
+  	overflow: hidden;
 }
 
 h1 {

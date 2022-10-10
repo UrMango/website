@@ -24,9 +24,13 @@ import Wordpress from "../../assets/wordpress.svg"
 
 import IconSable from "../../assets/logo-summer.jpg"
 import LogoSableText from "../../assets/Logo sable text.png"
+import DotLogo from "../../assets/Dot.jpg"
 import SableCover from "../../assets/projects/sable.png"
 import PsychobotCover from "../../assets/projects/psychobot.png"
-import DotLogo from "../../assets/Dot.jpg"
+import TrivYupCover from "../../assets/projects/trivyup.png"
+import DotCover from "../../assets/projects/dot.png"
+import MessageCover from "../../assets/projects/message.png"
+import HamesTahamusCover from "../../assets/projects/hamestahamus.png"
 
 import "./Home.css";
 
@@ -151,12 +155,12 @@ const Home = () => {
 						<Project title="PsychoBot - Emotional AI" image={ PsychobotCover } projectId={2} style={{ marginLeft: "25px" }}/>
 					</div>
 					<div className="projects-list" style={{marginLeft: "-152px", marginTop: "25px"}}>
-						<Project title="TrivYup - Quiz Website" image={ SableCover } projectId={3}/>
-						<Project title="PsychoBot - Emotional AI" image={ PsychobotCover } projectId={4} style={{ marginLeft: "25px" }}/>
+						<Project title="TrivYup - Quiz Website" image={ TrivYupCover } projectId={3}/>
+						<Project title="Dot - Custom Helmets" image={ DotCover } projectId={4} style={{ marginLeft: "25px" }}/>
 					</div>
 					<div className="projects-list" style={{marginLeft: "205px", marginTop: "25px"}}>
-						<Project title="TrivYup - Quiz Website" image={ SableCover } projectId={3}/>
-						<Project title="PsychoBot - Emotional AI" image={ PsychobotCover } projectId={4} style={{ marginLeft: "25px" }}/>
+						<Project title="Message - Keep It Alive" image={ MessageCover } projectId={5}/>
+						<Project title="Hames Tahamus - 3D Game" image={ HamesTahamusCover } projectId={6} style={{ marginLeft: "25px" }}/>
 					</div>
 					<h3 className="loadBtn">More ↓</h3>
 				</div>
