@@ -33,7 +33,7 @@ details[open] summary {
 	display: flex;
 	flex-direction: row;
 	justify-content: start;
-	width: 350px;
+	width: fit-content;
 	align-items: center;
 }
 
@@ -47,6 +47,7 @@ details[open] summary {
 
 .ExperienceBox .left .position {
 	left: 0;
+	width: fit-content;
 	font-weight: 700;
 	font-size: 18px;
 	text-align: left;

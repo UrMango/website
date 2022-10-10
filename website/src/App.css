@@ -15,7 +15,7 @@ html {
 
 body {
   	text-align: center;
-  	font-family: 'Poppins', 'Rubik', 'Arial';
+  	font-family: 'Inter', 'Rubik', 'Arial';
   	position: relative;
   	overflow: hidden;
 }
@@ -30,7 +30,7 @@ h2 {
 
 main {
 	min-height: 100vh;
-	background: linear-gradient(250deg, #151515 35%, #0E0E0E 100%);
+	background: var(--backgroundColor);
 	display: flex;
 	align-items: center;
 	justify-content: center;
