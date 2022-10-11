@@ -5,7 +5,7 @@ import Plus from "../../../assets/plus.png"
 import Minus from "../../../assets/minus.png"
 import { useState } from 'react';
 
-const ExperienceBox = ({id, onToggle, opened, role, company, start, end, icon, children}) => {
+const ExperienceBox = ({id, onEnter, onExit, onToggle, opened, role, company, start, end, icon, children}) => {
 	const ref = createRef();
 	const [open, setOpen] = useState(false);
 
@@ -31,7 +31,7 @@ const ExperienceBox = ({id, onToggle, opened, role, company, start, end, icon, c
 
 	return(
 		<details className="ExperienceBox" open={opened==id} onToggle={toggle}>
-			<summary>
+			<summary onMouseEnter={() => onEnter()} onMouseLeave={onExit}>
 				<div className="left">
 					<img className="icon" src={icon}></img>
 					<h2 className="position">{role} @ {company}</h2>

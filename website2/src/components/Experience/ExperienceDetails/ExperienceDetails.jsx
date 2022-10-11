@@ -2,14 +2,14 @@ import React from 'react';
 import NewlineText from '../../../helper/NewLineText';
 import "./ExperienceDetails.css"
 
-const ExperienceDetails = ({details, tools, links, logo}) => {
+const ExperienceDetails = ({onEnter, onExit, details, tools, links, logo}) => {
 	return(
 		<div className="ExperienceDetails">
 			<div className="logo">
 				<img src={logo} alt="Logo" />
 			</div>
 			<div className="details">
-				<div className="links">{links}</div>
+				<div className="links" onMouseEnter={() => onEnter("small")} onMouseLeave={onExit}>{links}</div>
 				<div className="description">
 					{<NewlineText text={details} />}
 				</div>

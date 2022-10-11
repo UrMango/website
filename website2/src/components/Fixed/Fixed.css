@@ -121,16 +121,17 @@
 .Fixed .sidebar .menu li a {
     color: white;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
     z-index: 9999;
     position: relative;
 
-    transition: all 0.5s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .Fixed .sidebar .menu li a:hover {
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 800;
 }
 
 .Fixed .sidebar .menu li a::after {

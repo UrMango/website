@@ -1,0 +1,35 @@
+.Expertise {
+	width: fit-content;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.Expertise .name {
+	width: 100%;
+	align-self: flex-start;
+	justify-self: flex-start;
+	text-align: left;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 41px;
+	line-height: 50px;
+	display: flex;
+	margin-bottom: 20px;
+	color: #FFFFFF;
+}
+
+.Expertise .box-lists{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.Expertise .box-lists .box-list {
+	display: flex;
+	flex-direction: row;
+}

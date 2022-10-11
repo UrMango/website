@@ -1,16 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NewlineText from '../../helper/NewLineText';
 import "./Box.css"
 
-const Box = ({height, width, title, icon, description, left="-3px", top="0"}) => {
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const Box = ({delay, height, width, title, icon, description, left="-3px", top="0"}) => {
+
+	const controls = useAnimation();
+	const [ref, inView] = useInView();
+
+	const intro = {
+		hidden: {
+			opacity: 0
+		},
+		visible: {
+			opacity: 1, 
+			transition: {
+				delay: delay,
+				duration: 2
+			}
+		}
+	};
+
+	useEffect(() => {
+		if (inView) {
+			controls.start("visible");
+		} else {
+			//controls.start("hidden");
+		}
+	}, [controls, inView]);
+
 	return(
-		<div className="Box" style={{ height, width, marginLeft: left, marginTop: top}}>
+		<motion.div className="Box" style={{ height, width, marginLeft: left, marginTop: top}} ref={ref} animate={controls} variants={intro} initial="hidden">
 			<div className="upper">
 				<img className="icon" src={icon}></img>
 				<h2 className="title">{title}</h2>			
 			</div>
 			<h3 className="description">{<NewlineText text={description}/>}</h3>
-		</div>
+		</motion.div>
 	)
 }
 

@@ -1,18 +1,10 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-import { motion, useMotionValue, useSpring } from "framer-motion";
-
-import Box from "../../components/Box/Box";
 
 import Programmer from "../../assets/programmer.png";
 import Lecture from "../../assets/lecture.jpg";
 import Thinking from "../../assets/thinking.png";
-import SoftwareDevelopment from "../../assets/Software Development.svg"
-import GameDevelopment from "../../assets/game controller.svg"
 import WebDevelopment from "../../assets/React.svg"
-import VideoEditing from "../../assets/Video.svg"
-import GraphicDesign from "../../assets/Grapic Icon.svg"
 import LinkIcon from "../../assets/Link.svg"
 import LinkedInIcon from "../../assets/LinkedIn.svg"
 import Unity from "../../assets/Unity.svg"
@@ -26,7 +18,7 @@ import Wordpress from "../../assets/wordpress.svg"
 import IconSable from "../../assets/logo-summer.jpg"
 import LogoSableText from "../../assets/Logo sable text.png"
 import DotLogo from "../../assets/Dot.jpg"
-import SableCover from "../../assets/projects/sable.png"
+import SableCover from "../../assets/projects/sable2.png"
 import PsychobotCover from "../../assets/projects/psychobot.png"
 import TrivYupCover from "../../assets/projects/trivyup.png"
 import DotCover from "../../assets/projects/dot.png"
@@ -35,27 +27,14 @@ import HamesTahamusCover from "../../assets/projects/hamestahamus.png"
 
 import "./Home.css";
 
-import Fixed from '../../components/Fixed/Fixed';
-import Experience from '../../components/Experience/Experience';
 import { useState } from 'react';
 import Project from '../../components/Project/Project';
-import { useEffect } from 'react';
+import Expertise from '../../components/Expertise/Expertise';
+import Proffesional from '../../components/Proffesional/Proffesional';
 
-const Home = () => {
+const Home = ({mouseEnter, mouseExit}) => {
 	const [filter, setFilter] = useState("All");
 	const [detailOpened, setDetailOpened] = useState(0);
-	const [variant, setVariant] = useState("default");
-
-	const cursorX = useMotionValue(-100);
-  	const cursorY = useMotionValue(-100);
-	const springConfig = { damping: 30, stiffness: 200 };
-	const cursorXSpring = useSpring(cursorX, springConfig);
-	const cursorYSpring = useSpring(cursorY, springConfig);
-
-	const variants = {
-		default: { width: 32, height: 32 },
-		hover: { width: 54, height: 54 }
-	}
 
 	const experience = [
 		{
@@ -79,7 +58,7 @@ const Home = () => {
 				<a href="https://sable.co.il/" target="_blank">
 					<img src={LinkIcon}></img>
 				</a>
-				<a href="https://www.linkedin.com/in/itsnoamraz/" target="_blank">
+				<a href="https://www.linkedin.com/company/71712473" target="_blank">
 					<img src={LinkedInIcon}></img>
 				</a>
 			</>
@@ -106,27 +85,6 @@ const Home = () => {
 		
 	]	
 
-	useEffect(() => {
-		const moveCursor = (e) => {
-			cursorX.set(e.clientX - (variants[variant].width / 2));
-      		cursorY.set(e.clientY - (variants[variant].height / 2));
-		}
-
-		window.addEventListener('mousemove', moveCursor);
-
-		return () => {
-			window.removeEventListener('mousemove', moveCursor);
-		}
-	}, []);
-
-	const mouseEnter = () => {
-		setVariant("hover");
-	}
-	
-	const mouseExit = () => {
-		setVariant("default");
-	}
-
 	const toggleDetails = (id) => {
 		setDetailOpened(id)
 	}
@@ -141,81 +99,35 @@ const Home = () => {
 			<title>Noam Raz</title>
 		</Helmet>
 
-		<motion.div
-			className="cursor"
-			style={{
-				translateX: cursorXSpring,
-				translateY: cursorYSpring,
-				originX: "center",
-				originY: "center",
-			}}
-			variants={variants}
-			animate={variant}
-		/>
-
 		<div className="Home">
-			<Fixed onEnter={mouseEnter} onExit={mouseExit}/>
 			<div className="header">
 				<div className="img" style={{backgroundImage: `url(${Programmer})`, backgroundPositionX: "20%"}}/>
 				<div className="img" style={{backgroundImage: `url(${Lecture})`}}/>
 				<div className="img" style={{backgroundImage: `url(${Thinking})`}}/>
 			</div>
 			<div className="proffesional">
-				<div className="expertise">
-					<h1 className="name">My Expertise</h1>
-					
-					<div className="box-lists">
-						<div className="box-list">
-							<Box width={"229px"} height={"229px"} left="0" title="Software Development & AI" icon={SoftwareDevelopment} description={`Experienced with Assembly x86, C, C++, C#,  Node.js and Python.\nWorked with Artificial Inteligence, Client & Server.`}/>
-							<Box width={"229px"} height={"229px"} title="Game Development" icon={GameDevelopment} description={`Expert with Unity & Phaser2D (HTML5).\nOver 3 years of game development with teams around the globe.`}/>
-							<Box width={"229px"} height={"229px"} title="Web Development" icon={WebDevelopment} description={`Proficient with HTML, CSS, JavaScript, React and Vue.\nMade an animated Kahoot clone with React and C++ Server (using WebSockets).`}/>
-						</div>
-						<div className="box-list">
-							<Box width={"229px"} height={"229px"} left="0" top="-3px" title="Video Editing" icon={VideoEditing} description={`7 Years of experience editing with Premiere Pro & After Effects.\nEdited Game trailers, Lyric clips and YouTube videos.`}/>
-							<Box width={"229px"} height={"229px"} top="-3px" title="Graphic Design" icon={GraphicDesign} description={`Skilled in editing and designing with Photoshop, Lightroom & Illustrator.\nDesigned 2D characters, Logos, Banners and edited photos for people.`}/>
-						</div>
-					</div>
-				</div>
-				<div className="experience">
-					<h1 className="name">Proffesional Experience</h1>
-					{experience?.map((experience, index) => (<Experience 
-						key={index}
-						id={index}
-						onToggle={toggleDetails}
-						opened={detailOpened}
-						icon={experience.icon} 
-						role= {experience.role} 
-						company={experience.company} 
-						start={experience.start} 
-						end={experience.end} 
-						logo={experience.logo}  
-						details={experience.details} 
-						tools={experience.tools} 
-						links={experience.links}  />))}
-				</div>
+				<Expertise />
+				<Proffesional experience={experience} mouseEnter={mouseEnter} mouseExit={mouseExit} toggleDetails={toggleDetails} detailOpened={detailOpened} />
 			</div>
 			<div className="third">
 				<div className="projects">
 					<h1 className="name">Projects</h1>
 					<h2 className="filter">Filter by <a onClick={filterChange}> All </a> / <a onClick={filterChange}>Games</a> / <a onClick={filterChange}>Web</a> / <a onClick={filterChange}>AI</a></h2>
 					<div className="projects-list">
-						<Project title="Sable World - Social Platform" image={ SableCover } projectId={1}/>
-						<Project title="PsychoBot - Emotional AI" image={ PsychobotCover } projectId={2} style={{ marginLeft: "25px" }}/>
+						<Project delay={0.3} onEnter={mouseEnter} onExit={mouseExit} title="Sable World - Social Platform" image={ SableCover } projectId={1}/>
+						<Project delay={0.6} onEnter={mouseEnter} onExit={mouseExit} title="PsychoBot - Emotional AI" image={ PsychobotCover } projectId={2} style={{ marginLeft: "25px" }}/>
 					</div>
 					<div className="projects-list" style={{marginLeft: "-152px", marginTop: "25px"}}>
-						<Project title="TrivYup - Quiz Website" image={ TrivYupCover } projectId={3}/>
-						<Project title="Dot - Custom Helmets" image={ DotCover } projectId={4} style={{ marginLeft: "25px" }}/>
+						<Project delay={0.6} onEnter={mouseEnter} onExit={mouseExit} title="TrivYup - Quiz Website" image={ TrivYupCover } projectId={3}/>
+						<Project delay={0.9} onEnter={mouseEnter} onExit={mouseExit} title="Dot - Custom Helmets" image={ DotCover } projectId={4} style={{ marginLeft: "25px" }}/>
 					</div>
 					<div className="projects-list" style={{marginLeft: "205px", marginTop: "25px"}}>
-						<Project title="Message - Keep It Alive" image={ MessageCover } projectId={5}/>
-						<Project title="Hames Tahamus - 3D Game" image={ HamesTahamusCover } projectId={6} style={{ marginLeft: "25px" }}/>
+						<Project delay={0.9} onEnter={mouseEnter} onExit={mouseExit} title="Message - Keep It Alive" image={ MessageCover } projectId={5}/>
+						<Project delay={1.2} onEnter={mouseEnter} onExit={mouseExit}title="Hames Tahamus - 3D Game" image={ HamesTahamusCover } projectId={6} style={{ marginLeft: "25px" }}/>
 					</div>
 					<a className="loadBtn" onMouseEnter={mouseEnter} onMouseLeave={mouseExit} >More ↓</a>
 				</div>
-			</div>
-			<div className="footer">
-				<h3>All copyrights reserved © Noam Raz 2022</h3>
-			</div>
+			</div>			
 		</div>
 		</HelmetProvider>
 	)

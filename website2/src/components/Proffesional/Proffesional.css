@@ -1,0 +1,25 @@
+.Proffesional {
+	width: fit-content;
+	margin-top: 100px;
+	display: flex;
+	justify-content: start;
+	align-items:flex-start;
+	flex-direction: column;
+}
+
+.Proffesional .name {
+	width: 100%;
+	align-self: flex-start;
+	justify-self: flex-start;
+	text-align: start;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 41px;
+	line-height: 50px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	
+	color: #FFFFFF;
+}
