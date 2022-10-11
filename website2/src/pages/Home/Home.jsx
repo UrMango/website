@@ -123,7 +123,7 @@ const Home = ({mouseEnter, mouseExit}) => {
 					</div>
 					<div className="projects-list" style={{marginLeft: "205px", marginTop: "25px"}}>
 						<Project delay={0.9} onEnter={mouseEnter} onExit={mouseExit} title="Message - Keep It Alive" image={ MessageCover } projectId={5}/>
-						<Project delay={1.2} onEnter={mouseEnter} onExit={mouseExit}title="Hames Tahamus - 3D Game" image={ HamesTahamusCover } projectId={6} style={{ marginLeft: "25px" }}/>
+						<Project delay={1.2} onEnter={mouseEnter} onExit={mouseExit}title="Hames Tahamus - 3D Game" image={ HamesTahamusCover } projectId={6} style={{ marginLeft: "25px", backgroundPositionY: "80%" }}/>
 					</div>
 					<a className="loadBtn" onMouseEnter={mouseEnter} onMouseLeave={mouseExit} >More ↓</a>
 				</div>

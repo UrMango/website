@@ -57,7 +57,7 @@ const Project = ({delay, onEnter, onExit, image, title, projectId, style}) => {
 
 	return(
 		<motion.div ref={ref} animate={controls} variants={intro} initial="hidden" onMouseEnter={onMouseEnter} onMouseLeave={onMouseExit} className="Project" style={style} >
-			<Link to={`/project/${projectId}`} className="container" style={{ backgroundImage: `url(${image})` }}>
+			<Link to={`/project/${projectId}`} className="container" style={{ backgroundImage: `url(${image})`, backgroundPositionX: style?.backgroundPositionX, backgroundPositionY: style?.backgroundPositionY }}>
 				<h3 className="title">{title}</h3>
 			</Link>
 		</motion.div>
