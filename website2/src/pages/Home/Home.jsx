@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 import Box from "../../components/Box/Box";
 
@@ -43,7 +44,18 @@ import { useEffect } from 'react';
 const Home = () => {
 	const [filter, setFilter] = useState("All");
 	const [detailOpened, setDetailOpened] = useState(0);
-	const [cursorXY, setCursorXY] = useState({ x: -100, y: -100 });
+	const [variant, setVariant] = useState("default");
+
+	const cursorX = useMotionValue(-100);
+  	const cursorY = useMotionValue(-100);
+	const springConfig = { damping: 30, stiffness: 200 };
+	const cursorXSpring = useSpring(cursorX, springConfig);
+	const cursorYSpring = useSpring(cursorY, springConfig);
+
+	const variants = {
+		default: { width: 32, height: 32 },
+		hover: { width: 54, height: 54 }
+	}
 
 	const experience = [
 		{
@@ -95,10 +107,9 @@ const Home = () => {
 	]	
 
 	useEffect(() => {
-		const moveCursor = (e) => { 
-			const x = e.clientX - 16;
-			const y = e.clientY - 16;
-			setCursorXY({ x, y });
+		const moveCursor = (e) => {
+			cursorX.set(e.clientX - (variants[variant].width / 2));
+      		cursorY.set(e.clientY - (variants[variant].height / 2));
 		}
 
 		window.addEventListener('mousemove', moveCursor);
@@ -107,6 +118,14 @@ const Home = () => {
 			window.removeEventListener('mousemove', moveCursor);
 		}
 	}, []);
+
+	const mouseEnter = () => {
+		setVariant("hover");
+	}
+	
+	const mouseExit = () => {
+		setVariant("default");
+	}
 
 	const toggleDetails = (id) => {
 		setDetailOpened(id)
@@ -121,9 +140,21 @@ const Home = () => {
 		<Helmet>
 			<title>Noam Raz</title>
 		</Helmet>
-		<div className="cursor" style={{transform: `translate3d(${cursorXY.x}px, ${cursorXY.y}px, 0)`}}></div>
+
+		<motion.div
+			className="cursor"
+			style={{
+				translateX: cursorXSpring,
+				translateY: cursorYSpring,
+				originX: "center",
+				originY: "center",
+			}}
+			variants={variants}
+			animate={variant}
+		/>
+
 		<div className="Home">
-			<Fixed/>
+			<Fixed onEnter={mouseEnter} onExit={mouseExit}/>
 			<div className="header">
 				<div className="img" style={{backgroundImage: `url(${Programmer})`, backgroundPositionX: "20%"}}/>
 				<div className="img" style={{backgroundImage: `url(${Lecture})`}}/>
@@ -179,7 +210,7 @@ const Home = () => {
 						<Project title="Message - Keep It Alive" image={ MessageCover } projectId={5}/>
 						<Project title="Hames Tahamus - 3D Game" image={ HamesTahamusCover } projectId={6} style={{ marginLeft: "25px" }}/>
 					</div>
-					<a className="loadBtn">More ↓</a>
+					<a className="loadBtn" onMouseEnter={mouseEnter} onMouseLeave={mouseExit} >More ↓</a>
 				</div>
 			</div>
 			<div className="footer">

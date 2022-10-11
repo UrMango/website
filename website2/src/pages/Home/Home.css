@@ -1,16 +1,20 @@
 .cursor {
-	pointer-events: none;
 	position: fixed;
-	padding: 0.3rem;
-	background-color: #fff;
-	border-radius: 50%;
+	left: 0;
+	top: 0;
+	width: 32px;
+	height: 32px;
+	border-radius: 100%;
 	mix-blend-mode: difference;
-	transition: transform 0.1s ease;
-	z-index: 9999999;
-}
-  
-.hover-this:hover ~ .cursor {
-	transform:translate(-50%, -50%) scale(8);
+	background-color: white;
+	z-index: 999999;
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+	pointer-events: none;
+
+	animation: all 0.3 ease;
 }
 
 .Home {
@@ -167,8 +171,8 @@
 	font-weight: 500;
 	color: white;
 	align-self: center;
-	cursor: pointer;
 }
+
 
 .Home .third {
 	width: 100%;
