@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 import LinkedIn from "../../assets/social media/linkedin.svg"
 import Instagram from "../../assets/social media/instagram.svg"
@@ -8,9 +10,19 @@ import GitHub from "../../assets/social media/github.svg"
 import { motion, useAnimation } from "framer-motion";
 
 import "./Fixed.css";
+import { useRef } from 'react';
 
 const Fixed = ({onEnter, onExit}) => {
 	const controls = [useAnimation(), useAnimation(), useAnimation()];
+	const navRef = useRef();
+	const sidebarRef = useRef();
+	const closeRef = useRef();
+
+	const showNavbar = () => {
+		navRef.current.classList.toggle("show-menu");
+		sidebarRef.current.classList.toggle("show-menu");
+		closeRef.current.classList.toggle("show-menu");
+	};
 
 	const hover = {
 		visible: {
@@ -50,11 +62,17 @@ const Fixed = ({onEnter, onExit}) => {
 				<h2 className='secondary'>Game Developer & Programmer</h2>
 				<div className='bg'></div>
 			</div>
-			<div className="sidebar">
-				<ul className="menu">
-					<li><Link to="/" onMouseEnter={onEnter} onMouseLeave={onExit} >Home</Link></li>
-					<li><Link to="/blog" onMouseEnter={onEnter} onMouseLeave={onExit} >Blog</Link></li>
-					<li><Link to="/about" onMouseEnter={onEnter} onMouseLeave={onExit} >About</Link></li>
+			<div className="sidebar" ref={sidebarRef}>
+				<div className="burgerIcon" onClick={showNavbar} >
+					<FaBars className='icon' />
+				</div>
+				<ul className="menu" ref={navRef}>
+					<div className="closeIcon" ref={closeRef}onClick={showNavbar} >
+						<FaTimes className='icon' />
+					</div>
+					<li><Link to="/" onClick={showNavbar} onMouseEnter={onEnter} onMouseLeave={onExit} >Home</Link></li>
+					<li><Link to="/blog" onClick={showNavbar} onMouseEnter={onEnter} onMouseLeave={onExit} >Blog</Link></li>
+					<li><Link to="/about" onClick={showNavbar} onMouseEnter={onEnter} onMouseLeave={onExit} >About</Link></li>
 				</ul>
 			</div>
 		</nav>

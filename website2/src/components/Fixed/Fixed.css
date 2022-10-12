@@ -150,19 +150,23 @@
     left: 35%;  /* 50% - (width / 2)*/
 }
 
+.Fixed .sidebar .burgerIcon {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
     
     .Fixed .title .name {
         margin-top: 60px;
 
-        font-size: 60px;
+        font-size: 48px;
         line-height: 61px;        
     }
     
     .Fixed .title .secondary {
-        margin-top: -5px;
+        margin-top: -8px;
 
-        font-size: 19.8px;
+        font-size: 15.8px;
         line-height: 20px;
     }
     
@@ -179,7 +183,72 @@
     }
 
     .Fixed .sidebar {
+        background-color: transparent;
+        align-items: flex-start;
+    }
+
+    .Fixed .show-menu {
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--backgroundColor);
+    }
+
+    .Fixed .sidebar .menu {
         display: none;
+    }
+
+    .Fixed .sidebar .show-menu {
+        display: flex;
+        position: absolute;
+        width: 200vw;
+        height: 30%;
+        background-color: var(--backgroundColor);
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .Fixed .sidebar .menu li {
+        left: auto;
+        align-self: center;
+        list-style: none;
+        z-index: 9999;
+    }
+    
+    .Fixed .sidebar .menu li a {
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .Fixed .sidebar .menu li a:hover {
+        font-size: 32px;
+        font-weight: 800;
+    }
+
+    .Fixed .sidebar .burgerIcon {
+        margin-left: -20px;
+        margin-top: 70px;
+        display: block;
+        color: white;
+    }
+    
+    .Fixed .sidebar .burgerIcon .icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .Fixed .sidebar .menu .show-menu {
+        width: fit-content;
+        height: fit-content;
+        position: absolute;
+        display: block;
+        color: white;
+        top: -100px;
+    }
+    
+    .Fixed .sidebar .menu .show-menu .icon {
+        width: 50px;
+        height: 50px;
     }
 
     .difference {
