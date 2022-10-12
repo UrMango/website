@@ -23,6 +23,13 @@ const Box = ({delay, height, width, title, icon, description, left="-3px", top="
 		}
 	};
 
+	const boxStyle = () =>  {
+		if(window.innerWidth > 768)
+			return { height, width, marginLeft: left, marginTop: top};
+		else
+			return { height: 329, width: 329};
+	}
+
 	useEffect(() => {
 		if (inView) {
 			controls.start("visible");
@@ -32,7 +39,7 @@ const Box = ({delay, height, width, title, icon, description, left="-3px", top="
 	}, [controls, inView]);
 
 	return(
-		<motion.div className="Box" style={{ height, width, marginLeft: left, marginTop: top}} ref={ref} animate={controls} variants={intro} initial="hidden">
+		<motion.div className="Box" style={boxStyle()} ref={ref} animate={controls} variants={intro} initial="hidden">
 			<div className="upper">
 				<img className="icon" src={icon}></img>
 				<h2 className="title">{title}</h2>			

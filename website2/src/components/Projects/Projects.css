@@ -1,0 +1,78 @@
+.Projects {
+	width: 699px;
+	margin-top: 0px;
+	display: flex;
+	justify-content: start;
+	align-items:flex-start;
+	flex-direction: column;
+}
+
+.Projects .name {
+	width: 100%;
+	align-self: flex-start;
+	justify-self: flex-start;
+	text-align: start;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 41px;
+	line-height: 50px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	
+	color: #FFFFFF;
+}
+
+.Projects .filter {
+	
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 50px;
+	display: flex;
+	align-items: center;
+	
+	color: #FFFFFF;
+}
+
+.Projects .filter a{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.Projects .projects-list{
+	display: flex;
+	flex-direction: row;
+}
+
+.Projects .loadBtn {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-family: 'Inter';
+	font-weight: 500;
+	color: white;
+	align-self: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+	.Projects {
+		width: fit-content;
+		margin-top: 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.Projects .name {
+		width: 50%;
+		align-self: center;
+		justify-self: center;
+		text-align: center;
+	}
+	
+	.Projects .projects-list{
+		flex-direction: column;
+	}
+}

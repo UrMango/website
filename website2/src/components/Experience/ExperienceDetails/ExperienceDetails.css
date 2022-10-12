@@ -80,3 +80,9 @@
 	margin-left: 5px;
 	filter: brightness(0) invert(1);
 }
+
+@media only screen and (max-width: 768px) {
+	.ExperienceDetails {
+		width: 80vw;
+	}
+}

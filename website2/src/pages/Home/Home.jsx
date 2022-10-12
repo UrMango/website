@@ -18,12 +18,7 @@ import Wordpress from "../../assets/wordpress.svg"
 import IconSable from "../../assets/logo-summer.jpg"
 import LogoSableText from "../../assets/Logo sable text.png"
 import DotLogo from "../../assets/Dot.jpg"
-import SableCover from "../../assets/projects/sable2.png"
-import PsychobotCover from "../../assets/projects/psychobot.png"
-import TrivYupCover from "../../assets/projects/trivyup.png"
-import DotCover from "../../assets/projects/dot.png"
-import MessageCover from "../../assets/projects/message.png"
-import HamesTahamusCover from "../../assets/projects/hamestahamus.png"
+
 
 import "./Home.css";
 
@@ -31,6 +26,8 @@ import { useState } from 'react';
 import Project from '../../components/Project/Project';
 import Expertise from '../../components/Expertise/Expertise';
 import Proffesional from '../../components/Proffesional/Proffesional';
+import ProjectPage from '../ProjectPage/ProjectPage';
+import Projects from '../../components/Projects/Projects';
 
 const Home = ({mouseEnter, mouseExit}) => {
 	const [filter, setFilter] = useState("All");
@@ -70,7 +67,7 @@ const Home = ({mouseEnter, mouseExit}) => {
 			start: "Nov 2019",
 			end: "Aug 2020",
 			logo: DotLogo,
-			details: `Custom-made helmets online, designed to encourage helmet wearing without comporomising the user's personality.\nIn the website, each user could design and order their own helment or choose from a custon-made store.`,
+			details: `Custom-made helmets online, designed to encourage helmet-wearing without compromising the user's personality.\nOn the website, each user could design and order their own helmet or choose from a custom-made store.`,
 			tools: <>
 			<img src={Wordpress}></img>
 			<img src={JS}></img>
@@ -102,7 +99,7 @@ const Home = ({mouseEnter, mouseExit}) => {
 		<div className="Home">
 			<div className="header">
 				<div className="img" style={{backgroundImage: `url(${Programmer})`, backgroundPositionX: "20%"}}/>
-				<div className="img" style={{backgroundImage: `url(${Lecture})`}}/>
+				<div className="img" id="main" style={{backgroundImage: `url(${Lecture})`}}/>
 				<div className="img" style={{backgroundImage: `url(${Thinking})`}}/>
 			</div>
 			<div className="proffesional">
@@ -110,24 +107,8 @@ const Home = ({mouseEnter, mouseExit}) => {
 				<Proffesional experience={experience} mouseEnter={mouseEnter} mouseExit={mouseExit} toggleDetails={toggleDetails} detailOpened={detailOpened} />
 			</div>
 			<div className="third">
-				<div className="projects">
-					<h1 className="name">Projects</h1>
-					<h2 className="filter">Filter by <a onClick={filterChange}> All </a> / <a onClick={filterChange}>Games</a> / <a onClick={filterChange}>Web</a> / <a onClick={filterChange}>AI</a></h2>
-					<div className="projects-list">
-						<Project delay={0.3} onEnter={mouseEnter} onExit={mouseExit} title="Sable World - Social Platform" image={ SableCover } projectId={1}/>
-						<Project delay={0.6} onEnter={mouseEnter} onExit={mouseExit} title="PsychoBot - Emotional AI" image={ PsychobotCover } projectId={2} style={{ marginLeft: "25px" }}/>
-					</div>
-					<div className="projects-list" style={{marginLeft: "-152px", marginTop: "25px"}}>
-						<Project delay={0.6} onEnter={mouseEnter} onExit={mouseExit} title="TrivYup - Quiz Website" image={ TrivYupCover } projectId={3}/>
-						<Project delay={0.9} onEnter={mouseEnter} onExit={mouseExit} title="Dot - Custom Helmets" image={ DotCover } projectId={4} style={{ marginLeft: "25px" }}/>
-					</div>
-					<div className="projects-list" style={{marginLeft: "205px", marginTop: "25px"}}>
-						<Project delay={0.9} onEnter={mouseEnter} onExit={mouseExit} title="Message - Keep It Alive" image={ MessageCover } projectId={5}/>
-						<Project delay={1.2} onEnter={mouseEnter} onExit={mouseExit}title="Hames Tahamus - 3D Game" image={ HamesTahamusCover } projectId={6} style={{ marginLeft: "25px", backgroundPositionY: "80%" }}/>
-					</div>
-					<a className="loadBtn" onMouseEnter={mouseEnter} onMouseLeave={mouseExit} >More ↓</a>
-				</div>
-			</div>			
+				<Projects filterChange={filterChange} onEnter={mouseEnter} onExit={mouseExit} />
+			</div>
 		</div>
 		</HelmetProvider>
 	)

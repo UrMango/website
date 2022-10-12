@@ -33,3 +33,17 @@
 	display: flex;
 	flex-direction: row;
 }
+
+@media only screen and (max-width: 768px) {
+	
+	.Expertise .name {
+		width: 60%;
+		align-self: center;
+		justify-self: center;
+		text-align: center;
+	}
+
+	.Expertise .box-lists .box-list {
+		flex-direction: column;
+	}
+}

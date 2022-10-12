@@ -37,3 +37,25 @@
 	padding-left: 20px;
 	padding-right: 20px;
 }
+
+@media only screen and (max-width: 768px) {
+	.Box {
+		margin-top: 20px;
+	}
+
+	.Box .upper .title {
+		margin-top: 25px;
+		font-size: 36px;
+		text-align: left;
+		line-height: 35.4px;
+	}
+
+	.Box .description {
+		font-size: 22px;
+		line-height: 26.94px;
+		text-align: left;
+		margin-top: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}

@@ -56,6 +56,12 @@ main {
 	animation: all 0.3 ease;
 }
 
+@media only screen and (max-width: 768px) {
+	.cursor {
+		display: none;
+	}
+}
+
 .footer {
 	background-color: var(--backgroundColor);
 	padding: 50px;

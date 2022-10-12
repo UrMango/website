@@ -140,11 +140,50 @@
     height: 3px;
     background-color: white;
     position: absolute;
-    left: 35%; /* 50% - (width / 2)*/
+    left: 50%;
     bottom: -8px;
     transition: all 0.5s ease-in;
 }
 
 .Fixed .sidebar .menu li a:hover::after {
     width: 30%;
+    left: 35%;  /* 50% - (width / 2)*/
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .Fixed .title .name {
+        margin-top: 60px;
+
+        font-size: 60px;
+        line-height: 61px;        
+    }
+    
+    .Fixed .title .secondary {
+        margin-top: -5px;
+
+        font-size: 19.8px;
+        line-height: 20px;
+    }
+    
+    .Fixed .title .bg {
+        z-index: -1;
+        position: absolute;
+        top: 30px;
+        height: 260px;
+        width: 260px;
+        height: 100px;
+        background: #000000;
+        filter: blur(32px);
+        border-radius: 79px;
+    }
+
+    .Fixed .sidebar {
+        display: none;
+    }
+
+    .difference {
+        display: none;
+    }
+    
 }
