@@ -68,7 +68,7 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Home mouseEnter={mouseEnter} mouseExit={mouseExit} />} />
           <Route path="/project/:id" exact element={<ProjectPage mouseEnter={mouseEnter} mouseExit={mouseExit}/>} />
-          <Route exact element={<NotFound />} />
+          <Route path="*" exact element={<NotFound />} />
         </Routes>
         <div className="footer">
 				  <h3>All copyrights reserved © Noam Raz 2022</h3>
