@@ -41,6 +41,8 @@
 @media only screen and (max-width: 768px) {
 	.Box {
 		margin-top: 20px;
+		width: 80vw;
+		height: 80vw;
 	}
 
 	.Box .upper .title {
@@ -51,8 +53,8 @@
 	}
 
 	.Box .description {
-		font-size: 22px;
-		line-height: 26.94px;
+		font-size: calc(80vw/15);
+		line-height: calc((80vw/15)*1.15);
 		text-align: left;
 		margin-top: 10px;
 		padding-left: 20px;

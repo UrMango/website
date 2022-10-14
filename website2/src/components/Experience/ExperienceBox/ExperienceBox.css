@@ -83,4 +83,7 @@ details[open] summary {
 		height: 65px;
 	}
 	
+	details[open].ExperienceBox {
+		max-height: 85vh;
+	}
 }

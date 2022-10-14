@@ -28,6 +28,7 @@
 	.Proffesional {
 		justify-content: center;
 		align-items: center;
+		width: 80vw;
 	}
 	
 	.Proffesional .name {

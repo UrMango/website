@@ -27,7 +27,7 @@ const Box = ({delay, height, width, title, icon, description, left="-3px", top="
 		if(window.innerWidth > 768)
 			return { height, width, marginLeft: left, marginTop: top};
 		else
-			return { height: 329, width: 329};
+			return {  };
 	}
 
 	useEffect(() => {
