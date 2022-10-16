@@ -9,6 +9,8 @@ import ProjectPage from './pages/ProjectPage/ProjectPage';
 import NotFound from './pages/NotFound/NotFound';
 
 import './App.css';
+import About from './pages/About/About';
+import Blog from './pages/Blog/Blog';
 
 const App = () => {
   const [variant, setVariant] = useState("default");
@@ -67,12 +69,14 @@ const App = () => {
         <Fixed onEnter={mouseEnter} onExit={mouseExit}/>
         <Routes>
           <Route path="/" exact element={<Home mouseEnter={mouseEnter} mouseExit={mouseExit} />} />
+          <Route path="/blog" exact element={<Blog />} />
+          <Route path="/about" exact element={<About />} />
           <Route path="/project/:id" exact element={<ProjectPage mouseEnter={mouseEnter} mouseExit={mouseExit}/>} />
           <Route path="*" exact element={<NotFound />} />
         </Routes>
         <div className="footer">
-				  <h3>All copyrights reserved © Noam Raz 2022</h3>
-			  </div>
+			<h3>All copyrights reserved © Noam Raz 2022</h3>
+		</div>
       </Router>
   );
 }

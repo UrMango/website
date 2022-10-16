@@ -21,7 +21,7 @@ const ProjectPage = ({mouseEnter, mouseExit}) => {
 		</Helmet>
 
 		<div className="ProjectPage">
-			
+			<h1>Coming soon...</h1>
 		</div>
 		</HelmetProvider>
 	)
