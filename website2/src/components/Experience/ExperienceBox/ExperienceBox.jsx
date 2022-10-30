@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { createRef } from 'react';
 import "./ExperienceBox.css"
-import Plus from "../../../assets/plus.png"
-import Minus from "../../../assets/minus.png"
+import Plus from "../../../assets/plus.webp"
+import Minus from "../../../assets/minus.webp"
 import { useState } from 'react';
 
 const ExperienceBox = ({id, onEnter, onExit, onToggle, opened, role, company, start, end, icon, children}) => {

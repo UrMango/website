@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 import Fixed from './components/Fixed/Fixed';
 import Home from './pages/Home/Home';
-import ProjectPage from './pages/ProjectPage/ProjectPage';
+import Sable from './pages/Sable/Sable';
 import NotFound from './pages/NotFound/NotFound';
 
 import './App.css';
@@ -70,12 +70,12 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<Home mouseEnter={mouseEnter} mouseExit={mouseExit} />} />
           <Route path="/blog" exact element={<Blog />} />
+          <Route path="/project/sable" exact element={<Sable mouseEnter={mouseEnter} mouseExit={mouseExit}/>} />
           <Route path="/about" exact element={<About />} />
-          <Route path="/project/:id" exact element={<ProjectPage mouseEnter={mouseEnter} mouseExit={mouseExit}/>} />
           <Route path="*" exact element={<NotFound />} />
         </Routes>
         <div className="footer">
-			<h3>All copyrights reserved © Noam Raz 2022</h3>
+			<h3>All copyrights reserved © Noam Raz {new Date(Date.now()).getFullYear()}</h3>
 		</div>
       </Router>
   );

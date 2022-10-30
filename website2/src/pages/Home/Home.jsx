@@ -1,9 +1,9 @@
 import React from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import Programmer from "../../assets/programmer.png";
-import Lecture from "../../assets/lecture.jpg";
-import Thinking from "../../assets/thinking.png";
+import Programmer from "../../assets/programmer.webp";
+import Lecture from "../../assets/lecture.webp";
+import Thinking from "../../assets/thinking.webp";
 import WebDevelopment from "../../assets/React.svg"
 import LinkIcon from "../../assets/Link.svg"
 import LinkedInIcon from "../../assets/LinkedIn.svg"
@@ -15,23 +15,29 @@ import Photoshop from "../../assets/photoshop.svg"
 import Illustrator from "../../assets/illustrator.svg"
 import Wordpress from "../../assets/wordpress.svg"
 
-import IconSable from "../../assets/logo-summer.jpg"
-import LogoSableText from "../../assets/Logo sable text.png"
-import DotLogo from "../../assets/Dot.jpg"
+import IconSable from "../../assets/logo-summer.webp"
+import LogoSableText from "../../assets/Logo-sable-text-english.webp"
+import DotLogo from "../../assets/Dot.webp"
 
 
 import "./Home.css";
+
+import Lottie from 'lottie-react';
+import scroll from '../../assets/390-scroll-down-2-auto-edited.json';
 
 import { useState } from 'react';
 import Project from '../../components/Project/Project';
 import Expertise from '../../components/Expertise/Expertise';
 import Proffesional from '../../components/Proffesional/Proffesional';
-import ProjectPage from '../ProjectPage/ProjectPage';
+import ProjectPage from '../../components/ProjectPage/ProjectPage';
 import Projects from '../../components/Projects/Projects';
+import { useRef } from 'react';
 
 const Home = ({mouseEnter, mouseExit}) => {
 	const [filter, setFilter] = useState("All");
 	const [detailOpened, setDetailOpened] = useState(0);
+	
+	const proffesional = useRef(null);
 
 	const experience = [
 		{
@@ -82,6 +88,10 @@ const Home = ({mouseEnter, mouseExit}) => {
 		
 	]	
 
+	const scrollClick = () => {
+		proffesional.current?.scrollIntoView({behavior: 'smooth'});
+	};
+
 	const toggleDetails = (id) => {
 		setDetailOpened(id)
 	}
@@ -102,7 +112,8 @@ const Home = ({mouseEnter, mouseExit}) => {
 				<div className="img" id="main" style={{backgroundImage: `url(${Lecture})`}}/>
 				<div className="img" style={{backgroundImage: `url(${Thinking})`}}/>
 			</div>
-			<div className="proffesional">
+			<Lottie onMouseEnter={() => {mouseEnter("small")}} onMouseDown={scrollClick} onMouseLeave={mouseExit} className='scrollIcon' animationData={scroll}/>
+			<div className="proffesional" ref={proffesional} >
 				<Expertise />
 				<Proffesional experience={experience} mouseEnter={mouseEnter} mouseExit={mouseExit} toggleDetails={toggleDetails} detailOpened={detailOpened} />
 			</div>

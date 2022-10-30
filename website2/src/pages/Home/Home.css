@@ -14,7 +14,7 @@
 	width: 100vw;
 	display: flex;
 	flex-direction: row;
-	height: 90vh;
+	height: 95vh;
 	left: 113px;
 	top: 0px;
 	box-shadow: inset 0px -71px 57px #000000;
@@ -57,9 +57,16 @@
 	}
 }
 
+.Home .scrollIcon {
+	margin-top: -100px;
+	width: 70px;
+	margin-bottom: 80px;
+	filter: brightness(0) invert();
+}
+
 .Home .proffesional {
 	width: 100%;
-	padding-top: 170px;
+	padding-top: 120px;
 	padding-bottom: 100px;
 	background: linear-gradient(180deg, var(--backgroundColor) 5%, #023C41 50%, var(--backgroundColor) 100%);
 

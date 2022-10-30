@@ -9,6 +9,7 @@ import { useInView } from "react-intersection-observer";
 const Project = ({delay, onEnter, onExit, image, title, projectId, style}) => {
 	const controls = useAnimation();
 	const [ref, inView] = useInView();
+	
 
 	const intro = {
 		hidden: {
