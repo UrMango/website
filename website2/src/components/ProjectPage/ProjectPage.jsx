@@ -7,6 +7,7 @@ import "./ProjectPage.css";
 
 import { useState } from 'react';
 import { useEffect } from 'react';
+import NewlineText from '../../helper/NewLineText';
 
 // import { initializeApp } from 'firebase/app';
 // import { getFirestore, collection, getDocs } from 'firebase/firestore';
@@ -23,7 +24,7 @@ import { useEffect } from 'react';
 
 // const firestore = getFirestore(app);
 
-const ProjectPage = ({projectName, header, textColor, color, category, year, description, mouseEnter, mouseExit, children}) => {
+const ProjectPage = ({projectName, header, textColor, color, categories, year, description, mouseEnter, mouseExit, children}) => {
 
 	return(
 		<HelmetProvider>
@@ -31,24 +32,28 @@ const ProjectPage = ({projectName, header, textColor, color, category, year, des
 			<title>Noam Raz - Project {projectName}</title>
 		</Helmet>
 
-		<div className="ProjectPage"  style={{background: `linear-gradient(180deg, rgba(2,4,8,1) 0%, ${color} 25%, rgba(2,4,8,1) 100%)`}}>
+		<div className="ProjectPage"  style={{background: `radial-gradient(circle, ${color} 0%, rgba(2,4,8,1) 90%)`, backgroundAttachment: "fixed"}}>
 			<div className="projectdetails">
 				<div className='header' style={{backgroundImage: `url("${header}")`}}></div>
-				<h1 className='name' style={{color: textColor}}>{projectName}</h1>
+				<h2 className='name' style={{color: textColor}}>{projectName}</h2>
 				<div className="separator"></div>
 				<div className="data">
 					<div className="quickAnswers">
 						<div className="category">
-							<h2>Category</h2>
-							<h4>{category}</h4>
+							<h6 className='dataTitle' style={{color: textColor}}>Category</h6>
+							<ul>
+								{categories.map(category => {
+									return <p className='dataContent'>{category}</p>
+								})}
+							</ul>
 						</div>
-						<div className="Year">
-							<h2>Year</h2>
-							<h4>{year}</h4>
+						<div className="year">
+							<h6 className='dataTitle' style={{color: textColor}}>Year</h6>
+							<p className='dataContent'>{year}</p>
 						</div>
 					</div>
 					<div className="description">
-						{description}
+						<NewlineText text={description} />
 					</div>
 				</div>
 				{ children }

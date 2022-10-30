@@ -1,11 +1,10 @@
 .ProjectPage {
 	min-height: 10vh;
-
-	color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	color: rgb(235, 235, 235);
 }
 
 
@@ -17,41 +16,149 @@
 	flex-direction: column;
 }
 
+@media only screen and (max-width: 768px) {
+	.ProjectPage .projectdetails {
+		width: 84vw;
+	}
+}
+
 .ProjectPage .projectdetails .header {
 	width: 100%;
 	height: 75vh;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	border-bottom-left-radius: 30px;
-	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 40px;
+	border-bottom-right-radius: 40px;
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+	.ProjectPage .projectdetails .header {
+		width: calc(100vw - 100px);
+		align-self:center;
+		margin-left: 100px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.ProjectPage .projectdetails .header {
+		margin-top: 20vh;
+		height: 55vh;
+		border-radius: 20px;
+		align-self:center;
+		
+	}
+}
+
 
 .ProjectPage .projectdetails .name {
 	margin-top: 60px;
 	margin-bottom: 10px;
-	font-size: 40px;
-	font-weight: 500;
+	font-size: 45px;
+	font-weight: 700;
 	width: fit-content;
 }
 
 .ProjectPage .projectdetails .separator {
-	height: 1px;
+	height: 2px;
 	width: 100%;
-	background-color: white;
+	background-color: rgb(235, 235, 235);
 }
 
 .ProjectPage .projectdetails .data {
+	margin-top: 20px;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 40px;
 }
 
-.ProjectPage .projectdetails .data .quickAnswers{
+
+.ProjectPage .projectdetails .data .quickAnswers {
 	display: flex;
 	flex-direction: column;
+	width: 50%;
+	padding-right: 20px;
+	text-align: left;
 }
 
-.ProjectPage .projectdetails .data .quickAnswers .category{
+.ProjectPage .projectdetails .data .quickAnswers .category {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	margin-bottom: 20px;
+}
+
+.ProjectPage .projectdetails .data .quickAnswers .category ul{
+	width: 70%;
+  	line-height: 30px;
+}
+
+.ProjectPage .projectdetails .data .quickAnswers .dataTitle {
+	width: 30%;
+	font-size: 1.3rem;
+	font-weight: 600;
+	text-overflow: ellipsis;
+	overflow-x: clip;
+}
+
+.ProjectPage .projectdetails .data .quickAnswers .dataContent {
+	width: 70%;
+	font-size: 1.2rem;
+	font-weight: 500;
+	vertical-align: middle;
+}
+
+.ProjectPage .projectdetails .data .quickAnswers .year {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 20px;
+}
+
+.ProjectPage .projectdetails .data .description{
+	padding-left: 20px;
+	width: 50%;
+	text-align: left;
+	font-size: 1.2rem;
+	font-weight: 500;
+	
+}
+
+.ProjectPage .projectdetails .data .description p {
+	margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+	.ProjectPage .projectdetails .data {
+		flex-direction: column;
+	}
+
+	.ProjectPage .projectdetails .data .quickAnswers {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding-right: 20px;
+		text-align: left;
+	}
+
+	.ProjectPage .projectdetails .data .quickAnswers .dataTitle {
+		width: 50%;
+	}
+
+	.ProjectPage .projectdetails .data .quickAnswers {
+		padding-right: 0px;
+	}
+
+	.ProjectPage .projectdetails .data .quickAnswers ul .dataContent {
+		width: 100%;
+	}
+	
+	.ProjectPage .projectdetails .data .quickAnswers .dataContent {
+		width: 70%;
+	}
+
+	.ProjectPage .projectdetails .data .description{
+		padding-left: 0px;
+		width: 100%;
+	}
+	
 }
