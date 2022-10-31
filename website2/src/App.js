@@ -11,6 +11,7 @@ import NotFound from './pages/NotFound/NotFound';
 import './App.css';
 import About from './pages/About/About';
 import Blog from './pages/Blog/Blog';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   const [variant, setVariant] = useState("default");
@@ -55,6 +56,7 @@ const App = () => {
 
   return (
       <Router>
+		<ScrollToTop />
         <motion.div
           className="cursor"
           style={{
