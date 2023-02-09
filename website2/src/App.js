@@ -12,6 +12,7 @@ import './App.css';
 import About from './pages/About/About';
 import Blog from './pages/Blog/Blog';
 import ScrollToTop from './components/ScrollToTop';
+import Mango from './pages/Mango/Mango';
 
 const App = () => {
   const [variant, setVariant] = useState("default");
@@ -73,6 +74,7 @@ const App = () => {
           <Route path="/" exact element={<Home mouseEnter={mouseEnter} mouseExit={mouseExit} />} />
           <Route path="/blog" exact element={<Blog />} />
           <Route path="/project/sable" exact element={<Sable mouseEnter={mouseEnter} mouseExit={mouseExit}/>} />
+          <Route path="/project/mango" exact element={<Mango mouseEnter={mouseEnter} mouseExit={mouseExit}/>} />
           <Route path="/about" exact element={<About />} />
           <Route path="*" exact element={<NotFound />} />
         </Routes>

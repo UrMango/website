@@ -118,7 +118,7 @@ const Home = ({mouseEnter, mouseExit}) => {
 				<Proffesional experience={experience} mouseEnter={mouseEnter} mouseExit={mouseExit} toggleDetails={toggleDetails} detailOpened={detailOpened} />
 			</div>
 			<div className="third">
-				<Projects filterChange={filterChange} onEnter={mouseEnter} onExit={mouseExit} />
+				<Projects filterChange={filterChange} filter={filter} onEnter={mouseEnter} onExit={mouseExit} />
 			</div>
 		</div>
 		</HelmetProvider>
